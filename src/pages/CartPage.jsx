@@ -16,6 +16,7 @@ import {
   FetchCartItem,
   FetchCartLocalStroage,
 } from "../store/feature/Cartsetup.js";
+import FloatingButtons from "../components/FloatingButtons.jsx";
 
 const cartItems = [
   { id: 1, img: s1, title: "Classic Runner", size: "42", price: 3500, qty: 1 },
@@ -48,7 +49,7 @@ const CartPage = () => {
     <div>
       {searchbar && (
         <div className="fixed inset-0 top-2 flex justify-center  w-screen  z-90 ">
-          <SearchBar setsearchbar={() => setsearchbar(true)}></SearchBar>
+          <SearchBar setsearchbar={setsearchbar}></SearchBar>
         </div>
       )}
       <Navbar setsearchbar={setsearchbar}></Navbar>
@@ -214,6 +215,7 @@ const CartPage = () => {
         <InsideBrand></InsideBrand>
         <Footer></Footer>
       </div>
+      <FloatingButtons></FloatingButtons>
     </div>
   );
 };

@@ -15,6 +15,7 @@ import SearchBar from "../components/SearchBar";
 import Navbar from "../components/Navbar";
 import InsideBrand from "../components/InsideBrand";
 import Footer from "../components/Footer";
+import FloatingButtons from "../components/FloatingButtons";
 
 const topics = [
   {
@@ -242,6 +243,7 @@ const HelpPage = () => {
         <InsideBrand></InsideBrand>
         <Footer></Footer>
       </div>
+      <FloatingButtons></FloatingButtons>
     </div>
   );
 };

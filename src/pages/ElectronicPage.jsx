@@ -19,6 +19,7 @@ import s8 from "../assets/electronic/s15.png";
 import { shoesProducts } from "../data/product.js";
 import useValidProducts from "../utils/utils.js";
 import { electronicProducts } from "../data/product.js";
+import FloatingButtons from "../components/FloatingButtons.jsx";
 
 const ElectronicPage = () => {
   let [searchbar, setsearchbar] = useState(false);
@@ -85,6 +86,7 @@ const ElectronicPage = () => {
           <InsideBrand></InsideBrand>
           <Footer></Footer>
         </div>
+        <FloatingButtons></FloatingButtons>
       </div>
     </>
   );

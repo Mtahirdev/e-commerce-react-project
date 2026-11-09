@@ -41,13 +41,18 @@ let cartslice = createSlice({
       toast.success("Delete from cart successfully");
     },
     FetchCartLocalStroage: (state, action) => {
-      let data = JSON.parse(localStorage.getItem("cartarr"));
-      state.cartarr = data;
-      let arr = products.filter((ele, index) => {
-        return state.cartarr.includes(ele.id);
-      });
-      console.log(arr);
-      state.fetchcartarr = arr;
+      try {
+        let data = JSON.parse(localStorage.getItem("cartarr"));
+        state.cartarr = data;
+        let arr = products.filter((ele, index) => {
+          return state.cartarr.includes(ele.id);
+        });
+        console.log(arr);
+        state.fetchcartarr = arr;
+      } catch (error) {
+        state.fetchcartarr = [];
+        state.cartarr = [];
+      }
     },
   },
 });

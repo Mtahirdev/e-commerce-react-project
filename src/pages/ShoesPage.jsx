@@ -18,6 +18,7 @@ import s8 from "../assets/shoes/s8.jpg";
 import s10 from "../assets/shoes/s10.jpg";
 import useValidProducts from "../utils/utils";
 import { shoesProducts } from "../data/product";
+import FloatingButtons from "../components/FloatingButtons";
 
 const ShoesPage = () => {
   let [searchbar, setsearchbar] = useState(false);
@@ -40,7 +41,7 @@ const ShoesPage = () => {
       <div>
         {searchbar && (
           <div className="fixed inset-0 top-2 flex justify-center  w-screen  z-90 ">
-            <SearchBar setsearchbar={() => setsearchbar(true)}></SearchBar>
+            <SearchBar setsearchbar={setsearchbar}></SearchBar>
           </div>
         )}
         <Navbar setsearchbar={setsearchbar}></Navbar>
@@ -52,6 +53,7 @@ const ShoesPage = () => {
           <InsideBrand></InsideBrand>
           <Footer></Footer>
         </div>
+        <FloatingButtons></FloatingButtons>
       </div>
     </>
   );

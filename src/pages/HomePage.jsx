@@ -30,6 +30,7 @@ import product from "../data/product.js";
 import useValidProducts from "../utils/utils.js";
 import { useDispatch } from "react-redux";
 import { FetchCartLocalStroage } from "../store/feature/Cartsetup.js";
+import FloatingButtons from "../components/FloatingButtons.jsx";
 
 const HomePage = () => {
   let [searchbar, setsearchbar] = useState(false);
@@ -80,6 +81,7 @@ const HomePage = () => {
           <InsideBrand></InsideBrand>
           <Footer></Footer>
         </div>
+        <FloatingButtons></FloatingButtons>
       </div>
     </>
   );
