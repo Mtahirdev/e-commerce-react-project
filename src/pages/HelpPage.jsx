@@ -87,6 +87,7 @@ const HelpPage = () => {
 
   return (
     <div>
+      <title>Help Page</title>
       {searchbar && (
         <div className="fixed inset-0 top-2 flex justify-center  w-screen  z-90 ">
           <SearchBar setsearchbar={setsearchbar}></SearchBar>

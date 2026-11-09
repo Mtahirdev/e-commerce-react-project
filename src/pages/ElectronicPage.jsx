@@ -70,6 +70,7 @@ const ElectronicPage = () => {
   ];
   return (
     <>
+      <title>Electronic Page</title>
       <div>
         {searchbar && (
           <div className="fixed inset-0 top-2 flex justify-center  w-screen  z-90 ">
