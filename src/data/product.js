@@ -50,8 +50,6 @@ const modules = import.meta.glob(
   { eager: true, import: "default" },
 );
 
-// ... keep your shoeNames, electronicNames, shoeDecs, electronicDecs, discounts ...
-
 // Fisher-Yates shuffle
 const shuffle = (arr) => {
   const a = [...arr];

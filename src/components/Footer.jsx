@@ -2,10 +2,10 @@ import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-brand-900 text-white mt-10">
+    <footer className="bg-ink-800 text-white mt-10">
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div>
-          <h1 className="text-3xl font-bold text-brand-400">Shoppy</h1>
+          <h1 className="text-3xl font-bold text-white">Shoppy</h1>
           <p className="text-ink-400 mt-3 text-sm">
             Shop smarter with thousands of quality products at affordable
             prices.
