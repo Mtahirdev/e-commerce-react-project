@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <Toaster position="top-right" toastOptions={{ duration: 3000 }} />
-      <CursorDot></CursorDot>
+      {/* <CursorDot></CursorDot> */}
       <Outlet />
     </>
   );

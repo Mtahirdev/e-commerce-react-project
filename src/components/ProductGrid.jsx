@@ -10,8 +10,12 @@ import s5 from "../assets/shoes/s5.jpg";
 import s6 from "../assets/shoes/s6.jpg";
 import s7 from "../assets/shoes/s7.jpg";
 import s8 from "../assets/shoes/s8.jpg";
-import { useDispatch } from "react-redux";
-import { FetchCartItem, setCartItem } from "../store/feature/Cartsetup.js";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  DeleteCartItem,
+  FetchCartItem,
+  setCartItem,
+} from "../store/feature/Cartsetup.js";
 import toast from "react-hot-toast";
 
 const products = [
@@ -29,6 +33,7 @@ const ProductGrid = ({ product }) => {
   const [wishlist, setWishlist] = useState([]);
   const [cart, setCart] = useState([]);
   let dispatch = useDispatch();
+  let { cartarr } = useSelector((state) => state.cartstore);
 
   const toggleWishlist = (id) => {
     setWishlist((prev) =>
@@ -56,6 +61,9 @@ const ProductGrid = ({ product }) => {
               ((item.price - item.salePrice) / item.price) * 100,
             );
             const liked = wishlist.includes(item.id);
+
+            let incart = cartarr.includes(item.id);
+            console.log(incart);
 
             return (
               <div
@@ -89,14 +97,25 @@ const ProductGrid = ({ product }) => {
                   </button>
 
                   {/* add to cart - over the image, bottom */}
-                  <button
-                    onClick={() => addToCart(item.id)}
-                    className="absolute bottom-0 left-0 w-full bg-ink-900/90 text-white text-sm font-semibold py-2.5 flex justify-center items-center gap-2
+                  {incart ? (
+                    <button
+                      onClick={() => dispatch(DeleteCartItem(item.id))}
+                      className="absolute bottom-0 left-0 w-full bg-red-900/90 text-white text-sm font-semibold py-2.5 flex justify-center items-center gap-2
+                               md:translate-y-full md:group-hover:translate-y-0 transition-transform duration-300 hover:bg-red-700/90"
+                    >
+                      <FiShoppingCart />
+                      Remove from cart
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() => addToCart(item.id)}
+                      className="absolute bottom-0 left-0 w-full bg-ink-900/90 text-white text-sm font-semibold py-2.5 flex justify-center items-center gap-2
                                md:translate-y-full md:group-hover:translate-y-0 transition-transform duration-300 hover:bg-ink-700"
-                  >
-                    <FiShoppingCart />
-                    Add to cart
-                  </button>
+                    >
+                      <FiShoppingCart />
+                      Add to cart
+                    </button>
+                  )}
                 </div>
 
                 {/* details */}

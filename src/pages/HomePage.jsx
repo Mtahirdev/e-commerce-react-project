@@ -38,7 +38,7 @@ const HomePage = () => {
 
   let producta = useValidProducts(product);
 
-  console.log(producta);
+  // console.log(producta);
 
   const products = [
     { id: 2, img: s2, title: "Urban Sneaker", price: 6500, salePrice: 4500 },
